@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GiftsService } from '../../gifs/services/gifts.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,4 +13,8 @@ export class SidebarComponent  {
   get historial(){
     return this.giftsService.historial;
   }
+  buscar(termino: string){
+   this.giftsService.buscarGifts(termino)
+  }
+
 }
